@@ -22,8 +22,7 @@ public class Main {
         double months = ui.nextDouble()*12;
         System.out.println("Loan term in months:" + months);
 
-        double value = Math.pow(1 + interest , months);
-        double payment = (principal - downPayment) * ((interest * value)/(value - 1));
+        double payment = calculator.Mortgage(principal,downPayment,interest,months);
 
         System.out.println("Your monthly payment is:" + NumberFormat.getCurrencyInstance().format(payment));
         System.out.println("Your bi-weekly payment is:" + NumberFormat.getCurrencyInstance().format(payment/2));
