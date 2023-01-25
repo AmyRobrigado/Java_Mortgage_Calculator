@@ -4,7 +4,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-        Scanner ui = new Scanner(System.in); // this is to grab user data
+        Scanner ui = new Scanner(System.in); // To grab user data
+
+        System.out.println("Enter the house price:");
+        double housePrice = ui.nextDouble();
+        System.out.println("House price: " + NumberFormat.getCurrencyInstance().format(housePrice));
 
         System.out.println("Enter loan amount: ");
         double principal = ui.nextDouble();
@@ -27,6 +31,6 @@ public class Main {
         System.out.println("Your monthly payment is:" + NumberFormat.getCurrencyInstance().format(payment));
         System.out.println("Your bi-weekly payment is:" + NumberFormat.getCurrencyInstance().format(payment/2));
 
-        ui.close();
+        ui.close(); // To stop the scanner
     }
 }
